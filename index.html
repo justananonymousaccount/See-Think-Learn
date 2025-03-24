@@ -220,10 +220,26 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Super-resolution (SR) techniques have made significant strides with the advent of diffusion models, yet these methods are often data-hungry, computationally intensive, and struggle with real-world degradations. In this work, we propose a novel zero-shot super-resolution framework that leverages diffusion models without the need for extensive datasets. Our approach addresses the limitations of current diffusion-based models, particularly their reliance on heavy architectures like UNet, which require significant computational resources and long training times. By adopting a fully convolutional ConvNeXt architecture, we eliminate the need for attention layers, thus reducing memory overhead and speeding up training, while still achieving results with high fidelity and perceptual quality.
-
-            We introduce a multi-scale training strategy using a single image, where pseudo high-resolution (HR) and low-resolution (LR) pairs are generated through a combination of unsharp masking and controlled degradation. The proposed training pipeline involves step-wise tuning across scales, enabling efficient convergence. Unlike traditional approaches that are limited to fixed upscaling factors, our method supports high-quality arbitrary scale super-resolution by gradually increasing resolution during inference.
-            Our model achieves competitive results in real-world scenarios with complex degradations, advancing zero-shot super-resolution with minimal data and computation.
+Regardless of advancements in supervised super-resolution001
+techniques, the pursuit of generalization often comes at the002
+cost of hallucinations. Moreover, even after days of train-003
+ing on expensive computational resources, these models004
+struggle with images containing degradations outside their005
+training distribution. The rise of self-supervised super-006
+resolution techniques addresses these challenges through007
+internal learning, where the model is trained directly008
+on a single test image. Our approach further over-009
+comes the limitations of existing self-supervised meth- 010
+ods by leveraging the diffusion process to achieve high- 011
+fidelity reconstructions with enhanced perceptual quality. 012
+We first utilize a patch-based training framework to sat- 013
+isfy the data hunger of diffusion models and prevent over- 014
+fitting. Then, we propose a lightweight ConvNeXt-V2 015
+based UNet for denoising architecture. Additionally, in- 016
+corporating Discrete Wavelet Transform (DWT) and Fast 017
+Fourier Transform (FFT) based combined loss enhances 018
+our self-supervised model’s emphasis on high-frequency de- 019
+tails.
           </p>
         </div>
       </div>
