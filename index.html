@@ -80,7 +80,7 @@
 
               <!-- Arxiv PDF link -->
               <span class="link-block">
-                <a href="https://github.com/justananonymousaccount/See-Think-Learn/" target="_blank"
+                <a href="https://arxiv.org/abs/2512.02456v1" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
@@ -91,7 +91,7 @@
 
               <!-- Supplementary PDF link -->
               <span class="link-block">
-                <a href="https://github.com/justananonymousaccount/See-Think-Learn/" target="_blank"
+                <a href="https://arxiv.org/abs/2512.02456v1" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
@@ -135,7 +135,26 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-Chain-of-Thought (CoT) prompting has enabled Large Language Models (LLMs) to achieve impressive reasoning capabilities, particularly in complex textual tasks. However, extending these capabilities to multimodal reasoning remains a significant challenge. Existing Vision-Language Models (VLMs) often struggle with effective visual understanding and reasoning, resulting in suboptimal performance on complex tasks. Current efforts to induce rationale generation in VLMs typically rely on constructing large-scale rationale datasets, often through human annotations or proprietary models, which are both costly. To address these limitations, we propose a simple yet effective self-training framework called "See-Think-Learn" (STL). At its core, STL introduces a structured reasoning template that encourages the model to <it>see before thinking</it> by explicitly extracting visual attributes in textual form before proceeding to reason about the task. The framework iteratively improves both visual perception and multimodal reasoning by having the model generate and learn from its own structured rationales. Furthermore, we augment the training data with negative rationales, i.e. explanations that justify why certain answer choices are incorrect, to enhance the model's ability to distinguish between correct and misleading responses. This fosters more discriminative and robust learning. Experiments across diverse domains demonstrate that STL significantly improves performance by leveraging the model’s own perception and reasoning. It surpasses models fine-tuned only on final answers and performs comparably to those trained on human-annotated rationales.  Thus, our approach enables the model to improve itself by learning from its own generated perceptions and reasoning.
+Vision-Language Models (VLMs) have achieved remarkable progress in integrating visual perception with language
+understanding. However, effective multimodal reasoning
+requires both accurate perception and robust reasoning,
+and weakness in either limits the performance of VLMs.
+Prior efforts to enhance reasoning often depend on highquality chain-of-thought (CoT) data, obtained via laborintensive human annotations, costly proprietary models or
+self-training methods that overlook perception. To address
+these limitations, we propose a simple yet effective selftraining framework called "See-Think-Learn" (STL). At its
+core, STL introduces a structured reasoning template that
+encourages the model to see before thinking: first extracting visual attributes in textual form, then using them to
+guide reasoning. The framework jointly improves perception and reasoning by having the model generate and learn
+from its own structured rationales in a self-training loop.
+Furthermore, we augment the training data with negative
+rationales, i.e. explanations that justify why certain answer
+choices are incorrect, to enhance the model’s ability to distinguish between correct and misleading responses. This
+fosters more discriminative and robust learning. Experiments across diverse domains show that STL consistently
+outperforms baselines trained directly only on answers or
+self-generated reasoning, while qualitative analysis confirms
+the high quality of its rationales. STL thus provides a costeffective solution to enhance multimodal reasoning ability
+of VLMs. We will make the code publicly available upon
+acceptance.
           </p>
         </div>
       </div>
